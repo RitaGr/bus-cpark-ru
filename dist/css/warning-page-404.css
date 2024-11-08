@@ -1,0 +1,67 @@
+body.warning-page-404 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Rubik, sans-serif;
+  background-color: #fff599;
+  color: #BB9B5D;
+}
+
+.warning-page-404__container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.warning-page-404__title {
+  font-size: 96px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.warning-page-404__message {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.warning-page-404__link {
+  font-size: 16px;
+  text-decoration: underline;
+  color: #BB9B5D;
+  position: absolute;
+  top: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.warning-page-404__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed #BB9B5D;
+}
+.warning-page-404__line--left {
+  left: 10%;
+}
+.warning-page-404__line--right {
+  right: 10%;
+}
+
+@media (max-width: 600px) {
+  .warning-page-404__link {
+    position: absolute;
+    top: 360px;
+    bottom: 0;
+  }
+  .warning-page-404__line--left {
+    left: 5%;
+  }
+  .warning-page-404__line--right {
+    right: 5%;
+  }
+}/*# sourceMappingURL=warning-page-404.css.map */

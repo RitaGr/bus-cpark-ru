@@ -1,0 +1,83 @@
+// Variables
+$warning-color: #fff599;
+$warning-second-color: #BB9B5D;
+
+// Body Styling
+body.warning-page-404 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Rubik, sans-serif;
+  background-color: $warning-color;
+  color: $warning-second-color;
+}
+
+// Container Styling
+.warning-page-404__container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+// Title Styling
+.warning-page-404__title {
+  font-size: 96px;
+  font-weight: bold;
+  margin: 0;
+}
+
+// Message Styling
+.warning-page-404__message {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+// Link Styling
+.warning-page-404__link {
+  font-size: 16px;
+  text-decoration: underline;
+  color: $warning-second-color;
+  position: absolute;
+  top: 480px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Dashed Lines Styling
+.warning-page-404__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed $warning-second-color;
+
+  &--left {
+    left: 10%;
+  }
+  
+  &--right {
+    right: 10%;
+  }
+}
+
+// Mobile styles
+@media (max-width: 600px) {
+  .warning-page-404__link {
+    position: absolute;
+    top: 360px;
+    bottom: 0;
+  }
+
+  // Dashed Lines Positioning for Mobile
+  .warning-page-404__line--left {
+    left: 5%;
+  }
+
+  .warning-page-404__line--right {
+    right: 5%;
+  }
+}
