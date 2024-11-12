@@ -1,9 +1,118 @@
 $text-primary-color: #FFFFFF;
 
-body{
-   background-color: #5CC1AF;
-   background-image: url("../../svg/background-site.svg");
-   background-size: cover;
+body {
+    background-color: #5CC1AF;
+    background-image: url("../../svg/background-site.svg");
+    background-size: cover;
+    font-family: 'Rubik';
+    padding: 50px;
+    color: $text-primary-color;
 }
 
-  
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    svg {
+        margin-right: 15px;
+    }
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        padding: 0 48px;
+
+        .menu__bar-box {
+            border: 3px solid $text-primary-color;
+            border-radius: 10px;
+            height: 54px;
+            width: 454px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu__bar-text {
+            color: $text-primary-color;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-text-container {
+            position: relative;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scroll-text {
+            position: absolute;
+            text-align: center;
+            font-weight: 400;
+            font-style: normal;
+            color: $text-primary-color;
+            animation: scrollText 15s linear infinite;
+            font-family: "Rubik Mono One", monospace;
+        }
+
+        .scroll-text:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .scroll-text:nth-child(2) {
+            animation-delay: 5s;
+        }
+
+        // Animation keyframes
+        @keyframes scrollText {
+            0%, 20% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            25%, 45% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50%, 100% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+        }
+    }
+
+    &__link {
+        color: $text-primary-color;
+        font-weight: regular;
+        padding: 0 100px;
+    }
+}
+
+
+.how-to-get-there-box{
+
+   &__text{
+      font-size: 16px;
+   }
+}
+.how-to-get-there{
+   display: flex;
+   flex-direction: row;
+   justify-content: start;
+   align-items: center;
+   gap: 12px;
+   h2{
+      font-size: 18px;
+   }
+}

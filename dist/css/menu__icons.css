@@ -2,4 +2,101 @@ body {
   background-color: #5CC1AF;
   background-image: url("../../svg/background-site.svg");
   background-size: cover;
+  font-family: "Rubik";
+  padding: 50px;
+  color: #FFFFFF;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu svg {
+  margin-right: 15px;
+}
+.menu__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 0 48px;
+}
+.menu__bar .menu__bar-box {
+  border: 3px solid #FFFFFF;
+  border-radius: 10px;
+  height: 54px;
+  width: 454px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.menu__bar .menu__bar-text {
+  color: #FFFFFF;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__bar .scroll-text-container {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__bar .scroll-text {
+  position: absolute;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  color: #FFFFFF;
+  animation: scrollText 15s linear infinite;
+  font-family: "Rubik Mono One", monospace;
+}
+.menu__bar .scroll-text:nth-child(1) {
+  animation-delay: 0s;
+}
+.menu__bar .scroll-text:nth-child(2) {
+  animation-delay: 5s;
+}
+@keyframes scrollText {
+  0%, 20% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  25%, 45% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50%, 100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.menu__link {
+  color: #FFFFFF;
+  font-weight: regular;
+  padding: 0 100px;
+}
+
+.how-to-get-there-box__text {
+  font-size: 16px;
+}
+
+.how-to-get-there {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+}
+.how-to-get-there h2 {
+  font-size: 18px;
 }/*# sourceMappingURL=menu__icons.css.map */
