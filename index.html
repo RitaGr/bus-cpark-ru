@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Mono+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/menu__icons.css">
-    <!-- font -->
     <title>bus.cpark.ru</title>
 </head>
 <body>
@@ -27,58 +26,169 @@
         </nav>
     </header>
     
-    <article class="how-to-get-there-box">
-        <span class="how-to-get-there">
-            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="./svg/svg-sprite.svg#icon-running-man"></use>
-            </svg>
-            <h2>Как добраться?</h2>
-        </span>
-        <p class="how-to-get-there-box__text">Станция «Планерная», 1-ый вагон из центра, идти прямо  по правой стороне вдоль белого жилого дома около 300 метров до ост. «Детская поликлиника» (ул. Планерная, д.16). Вам нужен автобус или маршрутные такси с надписями на борту «Кантри Парк». </p>
-    </article>
-    <img src="./icons/map.png">
-    <section>
-        <h1>Расписание</h1>
-        <p>Ближайший рейс</p>
-    </section>
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-arrow-up"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-check"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-country-park-logo"></use>
-        </svg>
-        <svg  xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-exchange-arrows"></use>
-        </svg>
-       
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-metro-logo"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-pencil"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-warning"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-error"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-mail"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-arrow-down"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-clock"></use>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg">
-            <use xlink:href="./svg/svg-sprite.svg#icon-train"></use>
-        </svg>
-    </div>
+    <main class="main-content">
+        <article class="directions">
+            <span class="directions__title-box">
+                <div class="directions__icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-running-man"></use>
+                    </svg>
+                </div>
+            <h2 class="directions__title">Как добраться?</h2>
+            </span>
+            <p class="directions__text">
+                Станция «Планерная», 1-ый вагон из центра, идти прямо по правой стороне вдоль белого жилого дома около 300 метров до ост. «Детская поликлиника» (ул. Планерная, д.16). Вам нужен автобус или маршрутные такси с надписями на борту «Кантри Парк».
+            </p>
+        </article>
+        
+        <section class="map">
+            <img src="./map.png" alt="Карта" class="map__image">
+        </section>
+        
+        <section class="schedule" id="schedule">
+            <h1 class="schedule__title">Расписание</h1>
+            <p class="schedule__subtitle">Ближайший рейс</p>
+            <div class="schedule__next-trip">
+                <div class="schedule__station schedule__station--metro">
+                    <svg viewBox="0 0 25 20" width="25" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-metro-logo"></use>
+                    </svg>
+                    <p class="schedule__station-name">от Планерная</p>
+                    <div class="schedule__time-box">
+                        <span class="schedule__time">8:25</span>
+                        <span class="schedule__time-note">Через 2 минуты</span>
+                    </div>
+                </div>
+                <svg class="schedule__exchange-arrows" width="23" height="17" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./svg/svg-sprite.svg#icon-exchange-arrows"></use>
+                </svg>
+                <div class="schedule__station schedule__station--park">
+                    <svg viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-country-park-logo"></use>
+                    </svg>
+                    <p class="schedule__station-name">от Кантри парк</p>
+                    <div class="schedule__time-box">
+                        <span class="schedule__time">8:25</span>
+                        <span class="schedule__time-note">Через 42 минуты</span>
+                    </div>
+                </div>
+            </div>
+            <h2 class="schedule__full-title">Полное расписание</h2>
+            <div class="schedule__full">
+                <div class="schedule__column">
+                    <ul class="schedule__list">
+                        <li class="schedule__item">7:45</li>
+                        <li class="schedule__item">8:05</li>
+                        <li class="schedule__item">8:25</li>
+                        <li class="schedule__item">8:45</li>
+                        <li class="schedule__item">9:05</li>
+                        <li class="schedule__item">9:25</li>
+                        <li class="schedule__item">9:45</li>
+                        <li class="schedule__item">10:05</li>
+                        <li class="schedule__item">11:00</li>
+                        <li class="schedule__item">12:00</li>
+                        <li class="schedule__item">13:00</li>
+                        <li class="schedule__item">14:00</li>
+                        <li class="schedule__item">15:00</li>
+                        <li class="schedule__item">16:00</li>
+                        <li class="schedule__item">16:15</li>
+                        <li class="schedule__item">17:00</li>
+                        <li class="schedule__item">17:30</li>
+                        <li class="schedule__item">17:45</li>
+                        <li class="schedule__item">18:15</li>
+                        <li class="schedule__item">18:30</li>
+                        <li class="schedule__item">19:00</li>
+                        <li class="schedule__item">19:15</li>
+                        <li class="schedule__item">19:45</li>
+                    </ul>
+                </div>
+                <svg class="schedule__separator" width="23" height="17" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="./svg/svg-sprite.svg#icon-exchange-arrows"></use>
+                </svg>
+                <div class="schedule__column">
+                    <ul class="schedule__list">
+                        <li class="schedule__item">7:45</li>
+                        <li class="schedule__item">8:05</li>
+                        <li class="schedule__item">8:25</li>
+                        <li class="schedule__item">8:45</li>
+                        <li class="schedule__item">9:05</li>
+                        <li class="schedule__item">9:25</li>
+                        <li class="schedule__item">9:45</li>
+                        <li class="schedule__item">10:05</li>
+                        <li class="schedule__item">11:00</li>
+                        <li class="schedule__item">12:00</li>
+                        <li class="schedule__item">13:00</li>
+                        <li class="schedule__item">14:00</li>
+                        <li class="schedule__item">15:00</li>
+                        <li class="schedule__item">16:00</li>
+                        <li class="schedule__item">16:15</li>
+                        <li class="schedule__item">17:00</li>
+                        <li class="schedule__item">17:30</li>
+                        <li class="schedule__item">17:45</li>
+                        <li class="schedule__item">18:15</li>
+                        <li class="schedule__item">18:30</li>
+                        <li class="schedule__item">19:00</li>
+                        <li class="schedule__item">19:15</li>
+                        <li class="schedule__item">19:45</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="complaint">
+            <h2 class="complaint__title">Не было рейса?</h2>
+            <p class="complaint__text">
+                При возникновении каких-либо вопросов касающихся нашего транспорта, а также жалоб и предложений, пожалуйста, напишите нам.
+            </p>
+            <form class="complaint__form">
+                <div class="complaint__group">
+                    <select class="complaint__input" id="topic" name="topic" required>
+                        <option value="" disabled selected>Выберите тему</option>
+                        <option value="feedback">Обратная связь</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+        
+                <div class="complaint__group">
+                    <input type="time" class="complaint__input" id="time" name="time" required placeholder="Время">
+                </div>
+        
+                <div class="complaint__group">
+                    <input type="email" class="complaint__input" id="email" name="email" required placeholder="Ваша почта">
+                </div>
+        
+                <div class="complaint__group">
+                    <textarea class="complaint__textarea" id="message" name="message" required placeholder="Текст вашего обращения"></textarea>
+                </div>
+        
+                <button type="submit" class="complaint__button">Отправить</button>
+            </form>
+            <p class="complaint__disclaimer">
+                *При использовании нашего сайта, пожалуйста, ознакомьтесь с нашей 
+                <a href="#" class="complaint__link">политикой конфиденциальности</a>, а также 
+                <a href="#" class="complaint__link">политикой конфиденциальности google</a> и условиями использования 
+                <a href="#" class="complaint__link">партнёров</a>.
+            </p>
+        </section>
+        
+        
+        <article class="alternative-route">
+            <h2 class="alternative-route__title">Альтернативные маршруты</h2>
+            <p class="alternative-route__text">
+                Корпоративные автобусы "Кантри парк" осуществляют перевозку людей только в рабочие дни по опубликованному расписанию.
+            </p>
+            <p class="alternative-route__text">   
+                Другие автобусы, указанные в альтернативных маршрутах, останавливаются в пешей доступности от нашего бизнес центра. Номера маршрутов и остановок смотрите на карте или в транспортных приложениях.
+            </p>
+            <p class="alternative-route__text">
+                Альтернативные маршруты по следующим номерам автобусов: 817, 173 (МКАД ост. Новобутаково), 469, 484 ( ост. Новобутаково), троллейбус 202, 203 (ост. Микрорайон 2Б)
+            </p>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">Все права защищены © 2014-2024 "Кантри Парк" | Политика конфиденциальности | Под управлением BPS Rusland</p>
+    </footer>
 </body>
 </html>

@@ -1,4 +1,11 @@
 $text-primary-color: #FFFFFF;
+$secondary-color : #51AF9F;
+$tertiary-color: #DBF1E8;
+$text-secondary-color: #56746F;
+$error-second-color: #AC5F5F;
+$error-color: #FF9999;
+$stroke-color: #B2C9C0;
+
 
 body {
     background-color: #5CC1AF;
@@ -64,38 +71,149 @@ body {
             font-style: normal;
             color: $text-primary-color;
             font-family: "Rubik Mono One", monospace;
-            animation: scrollText 10s linear infinite;
         }
 
-        .scroll-text:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .scroll-text:nth-child(2) {
-            animation-delay: 5s; // Half of the total animation time to switch to the next text
-        }
-
-
-        // Animation keyframes for smooth horizontal scrolling with pause
-        @keyframes  scrollText {
-            0% {
-                transform: translateX(0);
-            }
-            50% {
-                transform: translateX(75%); /* Move to third item */
-            }
-            75% {
-                transform: translateX(150%); /* Move to fourth item */
-            }
-            100% {
-                transform: translateX(225%);
-            }
-        }
     }
 
     &__link {
         color: $text-primary-color;
         font-weight: regular;
         padding: 0 100px;
+    }
+}
+
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.directions{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 132px;
+
+    &__title-box{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+    }
+}
+.schedule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border : 3px solid $secondary-color ;
+    border-radius: 15px;
+    width: 30%;
+    margin-bottom: 75px;
+
+    &__title{
+        font-size: 24px;
+        text-decoration: underline;
+    }
+
+    &__subtitle{
+        font-size: 16px;
+    }
+
+    &__next-trip{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__station{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__station-name{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    &__time-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__time{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        background-color: $tertiary-color;
+        color: $text-secondary-color;
+        font-size: 24px;
+        font-weight: 400;
+        width: 160px;
+        height: 60px;
+    }
+    &__time-note{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $error-second-color;
+        border-radius: 10px;
+        background-color: $error-color;
+        color: $error-second-color;
+        font-size: 14px;
+        font-weight: 400;
+        width: 136px;
+        height: 37px;
+        margin-top: -16px;
+    }
+    &__full-title{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    &__full{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        gap: 30px;
+    }
+    &__column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        background-color: $tertiary-color;
+        color: $text-secondary-color;
+        font-size: 24px;
+        font-weight: 400;
+        width: 180px;
+    }
+    &__list{
+        
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $stroke-color;
+        width: 90px;
+        height: 30px;
+        padding: 6px;
+    }
+    &__item:nth-last-child(1){
+        border: none;
     }
 }
