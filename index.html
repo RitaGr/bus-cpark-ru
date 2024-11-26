@@ -11,7 +11,7 @@
 </head>
 <body>
     <header class="menu">
-        <svg viewBox="0 0 45 42" width="45" height="42" xmlns="http://www.w3.org/2000/svg">
+        <svg class="menu__icon" viewBox="0 0 45 42" width="45" height="42" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="./svg/svg-sprite.svg#icon-logo"></use>
         </svg>
         <nav class="menu__bar">
@@ -39,11 +39,8 @@
             <p class="directions__text">
                 Станция «Планерная», 1-ый вагон из центра, идти прямо по правой стороне вдоль белого жилого дома около 300 метров до ост. «Детская поликлиника» (ул. Планерная, д.16). Вам нужен автобус или маршрутные такси с надписями на борту «Кантри Парк».
             </p>
+            <img src="./map.png" alt="Карта" class="directions__map-image">
         </article>
-        
-        <section class="map">
-            <img src="./map.png" alt="Карта" class="map__image">
-        </section>
         
         <section class="schedule" id="schedule">
             <h1 class="schedule__title">Расписание</h1>
@@ -138,12 +135,17 @@
         <section class="complaint">
             <h2 class="complaint__title">Не было рейса?</h2>
             <p class="complaint__text">
-                При возникновении каких-либо вопросов касающихся нашего транспорта, а также жалоб и предложений, пожалуйста, напишите нам.
+                При возникновении каких-либо вопросов касающихся нашего транспорта, а также жалоб и предложений, пожалуйста, <a class="complaint__link" href="https://bus.cpark.ru/contact/">напишите нам</a>.
             </p>
             <form class="complaint__form">
                 <div class="complaint__group">
+                    <svg width="16" height="9" viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-arrow-down"></use>
+                    </svg>
+                    <label class="complaint__label" for="topic">Выберите тему</label>
                     <select class="complaint__input" id="topic" name="topic" required>
-                        <option value="" disabled selected>Выберите тему</option>
+                        <option value="" disabled selected hidden></option>
+                        <option value="late-arrival">Опоздание</option>
                         <option value="feedback">Обратная связь</option>
                         <option value="complaint">Жалоба</option>
                         <option value="other">Другое</option>
@@ -151,24 +153,33 @@
                 </div>
         
                 <div class="complaint__group">
+                    <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-clock"></use>
+                    </svg>
                     <input type="time" class="complaint__input" id="time" name="time" required placeholder="Время">
                 </div>
         
                 <div class="complaint__group">
+                    <svg width="20" height="16" viewBox="0 0 20 16" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-mail"></use>
+                    </svg>
                     <input type="email" class="complaint__input" id="email" name="email" required placeholder="Ваша почта">
                 </div>
         
                 <div class="complaint__group">
+                    <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                        <use xlink:href="./svg/svg-sprite.svg#icon-pencil"></use>
+                    </svg>
                     <textarea class="complaint__textarea" id="message" name="message" required placeholder="Текст вашего обращения"></textarea>
                 </div>
         
-                <button type="submit" class="complaint__button">Отправить</button>
+                <button type="submit" class="complaint__button">Отправить*</button>
             </form>
             <p class="complaint__disclaimer">
                 *При использовании нашего сайта, пожалуйста, ознакомьтесь с нашей 
-                <a href="#" class="complaint__link">политикой конфиденциальности</a>, а также 
-                <a href="#" class="complaint__link">политикой конфиденциальности google</a> и условиями использования 
-                <a href="#" class="complaint__link">партнёров</a>.
+                <a href="#" class="complaint__disclaimer-link">политикой конфиденциальности</a>, а так же 
+                <a href="#" class="complaint__disclaimer-link">политикой конфиденциальности google</a> и условиями использования 
+                <a href="#" class="complaint__disclaimer-link">recaptcha</a>.
             </p>
         </section>
         
