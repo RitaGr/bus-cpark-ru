@@ -26,6 +26,23 @@ body {
     justify-content: space-between;
     padding: 50px;
     padding-bottom: 75px;
+    position: relative;
+    z-index: 1; /* Ensure the menu bar does not overlap with other content */
+
+    &__icon {
+        position: relative; /* Default position */
+        transition: all 0.3s ease; /* Smooth transition for sticky effect */
+        z-index: 1000; /* Ensure icon stays above other elements */
+        cursor: pointer; /* Make the icon clickable */
+
+        &-sticky {
+            position: fixed;
+            left: 50px;
+            top: 50px;
+            z-index: 1000; /* Ensure it stays on top */
+            transform: translate(0, 0);
+        }
+    }
 
     &__bar {
         display: flex;
@@ -33,6 +50,13 @@ body {
         justify-content: space-between;
         width: 70%;
         padding-right: 10%;
+        
+        &-sticky{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+        }
 
         .menu__bar-box {
             border: 3px solid $text-primary-color;
@@ -82,6 +106,7 @@ body {
         padding: 0 100px;
     }
 }
+
 
 
 .main-content{
@@ -257,18 +282,30 @@ body {
         align-items: center;
         width: 100%;
         padding-bottom: 15px;
+        position: relative;
+
+        &-hidden {
+            display: none; /* Hide the element */
+        }
+        
     }
     &__label{
         position: absolute;
         color: $text-secondary-color;
         font-size: 14px;
         font-weight: 600;
-        margin-left: 20px;
+        margin-left: 20px; 
     }
     &__group svg{
         position: absolute;
         padding-right: 20px;
         right: 0;
+    }
+    &__group:last-of-type svg{
+        position: absolute;
+        padding-right: 20px;
+        top: 0;
+        padding-top: 20px;
     }
     &__input{
         width: 100%;
@@ -276,11 +313,12 @@ body {
         border: 1px solid $secondary-color;
         border-radius: 10px;
         height: 60px;
-        padding-right: 25px;
+        padding: 0 25px 0 20px;
     }
     &__input:focus{
-            border: 1px solid $secondary-color; // Removes the border on focus
-            outline: none; // Ensures no outline appears
+        border: 1px solid $secondary-color; // Removes the border on focus
+        outline: none; // Ensures no outline appears
+        color: $text-secondary-color; // Only set necessary focus styles
     }
     select {
         -webkit-appearance: none;  // For WebKit browsers (Chrome, Safari, etc.)
@@ -292,30 +330,62 @@ body {
         &::-ms-expand {
           display: none;           // Hides the dropdown arrow in Internet Explorer
         }
-      }
-    // &__input#topic{
-    //     background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2210%22%20viewBox%3D%220%200%2016%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M1.34571%200.5H14.6543C15.8509%200.5%2016.4493%201.89539%2015.6049%202.70892L8.95061%209.12017C8.42498%209.62661%207.57502%209.62661%207.05498%209.12017L0.395101%202.70892C-0.449266%201.89539%200.149061%200.5%201.34571%200.5Z%22%20fill%3D%22%2356746F%22%2F%3E%0A%3C%2Fsvg%3E");
-    //     background-repeat: no-repeat;
-    //     background-position: 96% center;
-    // }
-    // &__input#time{
-    //     background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2217%22%20height%3D%2218%22%20viewBox%3D%220%200%2017%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M17%209C17%2013.6944%2013.1944%2017.5%208.5%2017.5C3.80558%2017.5%200%2013.6944%200%209C0%204.30558%203.80558%200.5%208.5%200.5C13.1944%200.5%2017%204.30558%2017%209Z%22%20fill%3D%22%2356746F%22%2F%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.5%204.9625C8.85207%204.9625%209.1375%205.24792%209.1375%205.6V8.7359L11.0758%2010.6742C11.3247%2010.9232%2011.3247%2011.3268%2011.0758%2011.5758C10.8268%2011.8247%2010.4232%2011.8247%2010.1742%2011.5758L8.04925%209.45076C7.92965%209.33125%207.8625%209.16906%207.8625%209V5.6C7.8625%205.24792%208.14793%204.9625%208.5%204.9625Z%22%20fill%3D%22%23DBF1E8%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-    //     background-repeat: no-repeat;
-    // }
+
+        option{
+            background-color: lighten($tertiary-color, 20%);
+            color: $text-secondary-color;
+            font-size: 14px;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 600;
+        }
+        option[disabled] {
+            background-color: $tertiary-color;
+            color: $text-secondary-color;
+            font-size: 14px;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 600;
+        }
+     }
     &__input::placeholder{
         // color: transparent;
         font-weight: 600;
         color: $text-secondary-color;
         font-size: 14px;
         font-family: 'Rubik' ;
+    }
+    &__input-datetime {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: $tertiary-color;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        width: 100%;
+        height: 60px;
         padding-left: 20px;
+        font-size: 16px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 600;
+        color: $text-secondary-color;
+        cursor: pointer;
+    
+        &::-webkit-calendar-picker-indicator {
+            display: none;
+        }
+    
+        &:focus {
+            border-color: $secondary-color;
+            outline: none;
+        }
     }
     &__textarea{
         background-color: $tertiary-color;
         border: 1px solid $secondary-color;
         border-radius: 10px;
-        width: 100%;
+        width: 100%;  
         height: 125px;
+        resize: none; 
+        padding: 20px 25px 0 20px;
     }
     &__textarea::placeholder{
         // color: transparent;
@@ -323,12 +393,17 @@ body {
         color: $text-secondary-color;
         font-size: 14px;
         font-family: 'Rubik' ;
-        padding: 20px;
     }
     &__textarea:focus{
         border: 1px solid $secondary-color; // Removes the border on focus
         outline: none; // Ensures no outline appears
-}
+    }
+    &__input:focus,
+    &__textarea:focus {
+        color: $text-secondary-color; // Consistent color for typed text
+        
+    }
+    
     &__button{
         width: 100%;
         background-color: $secondary-color;
@@ -344,6 +419,10 @@ body {
 .alternative-route{
     width: 30%;
     padding-bottom: 124px;
+
+    &__text{
+        font-size: 16px;
+    }
 }
 .footer{
     display: flex;
