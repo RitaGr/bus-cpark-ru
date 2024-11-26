@@ -1,11 +1,13 @@
 $secondary-text-color: #373F42;
 $background-color: #5CC1AF;
 $link-color: #FFFFFF;
+$primary-color : #5CC1AF;
 
 body {
-    background-color: $background-color;
+    background-color: $primary-color;
     background-image: url("../../svg/background-site.svg");
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Rubik', sans-serif;
     color: $secondary-text-color;
 }

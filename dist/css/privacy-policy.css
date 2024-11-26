@@ -2,6 +2,7 @@ body {
   background-color: #5CC1AF;
   background-image: url("../../svg/background-site.svg");
   background-size: cover;
+  background-repeat: no-repeat;
   font-family: "Rubik", sans-serif;
   color: #373F42;
 }
