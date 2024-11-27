@@ -11,7 +11,8 @@
 </head>
 <body>
     <header class="menu">
-        <svg class="menu__icon" viewBox="0 0 45 42" width="45" height="42" xmlns="http://www.w3.org/2000/svg">
+        <img src="./map-mobile.png" alt="Карта" class=" map-hidden">
+        <svg class="menu__icon" id="menu__icon" viewBox="0 0 45 42" width="45" height="42" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="./svg/svg-sprite.svg#icon-logo"></use>
         </svg>
         <nav class="menu__bar">
@@ -32,7 +33,12 @@
         </nav>
     </header>
     
-    <main class="main-content">
+    <main class="main-content ">
+        <div id="main-content__panel-icon">
+            <svg class="menu__panel-icon" id="menu__panel-icon" viewBox="0 0 45 42" width="45" height="42" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="./svg/svg-sprite.svg#icon-train"></use>
+            </svg>
+        </div>
         <article class="directions">
             <span class="directions__title-box">
                 <div class="directions__icon">
@@ -53,7 +59,7 @@
             <p class="schedule__subtitle">Ближайший рейс</p>
             <div class="schedule__next-trip">
                 <div class="schedule__station schedule__station--metro">
-                    <svg viewBox="0 0 25 20" width="25" height="20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="schedule__station-icon" viewBox="0 0 25 20" width="25" height="20" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="./svg/svg-sprite.svg#icon-metro-logo"></use>
                     </svg>
                     <p class="schedule__station-name">от Планерная</p>
@@ -66,7 +72,7 @@
                     <use xlink:href="./svg/svg-sprite.svg#icon-exchange-arrows"></use>
                 </svg>
                 <div class="schedule__station schedule__station--park">
-                    <svg viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="schedule__station-icon" viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                         <use xlink:href="./svg/svg-sprite.svg#icon-country-park-logo"></use>
                     </svg>
                     <p class="schedule__station-name">от Кантри парк</p>
@@ -212,6 +218,8 @@
     <button id="admin-action-success">Trigger Success Notification</button>
 <button id="admin-action-warning">Trigger Warning Notification</button>
 <button id="admin-action-error">Trigger Error Notification</button>
+
+
     <script src="./datetime.js"></script>
     <script src="./menu-logo.js"></script>
     <script src="./timetable.js"></script>
