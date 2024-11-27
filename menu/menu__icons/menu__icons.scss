@@ -1,16 +1,4 @@
-$text-primary-color: #FFFFFF;
-$primary-color : #5CC1AF;
-$secondary-color : #51AF9F;
-$tertiary-color: #DBF1E8;
-$text-secondary-color: #56746F;
-$error-second-color: #AC5F5F;
-$error-color: #FF9999;
-$stroke-color: #B2C9C0;
-$disclaimer-text-color: rgba(255, 255, 255, 0.81);
-$warning-color: #fff599;
-$warning-second-color: #BB9B5D;
-$unavailable-color: #FF9999;
-$unavailable-second-color: #AC5F5F;
+@use '../../scss/base/variables';
 
 
 body {
@@ -578,13 +566,13 @@ body {
     display: none;
 }
 
-/* Hide the sliding panel and bus icon on larger screens */
-@media only screen and (min-width: 768px) {
-    .sliding-panel,
-    .bus-icon {
-        display: none;
-    }
-}
+// /* Hide the sliding panel and bus icon on larger screens */
+// @media only screen and (min-width: 768px) {
+//     .sliding-panel,
+//     .bus-icon {
+//         display: none;
+//     }
+// }
 
 /* Show the sliding panel and bus icon on mobile screens */
 @media only screen and (max-width: 768px) {
@@ -592,42 +580,109 @@ body {
     *{
         padding: 0;
         margin: 0;
+        box-sizing: border-box;
     }
     body{
         background-image: none;
+        width: 100vw;
     }
+    main{
+        border-radius: 20px 20px 0 0;
+        margin-top: -90px;
+        z-index: 1;
+        position: relative;
+        width: 100%;
+    }
+    main.active {
+        height: 100vh; /* Expand to full screen */
+        overflow-y: auto; /* Allow scrolling when expanded */
+        z-index: 1;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out;
+        height: 100
+    }
+    // main {
+    //     position: fixed;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 50px; /* Collapsed height */
+    //     background-color: $primary-color;
+    //     border-radius: 20px 20px 0 0;
+    //     z-index: 1;
+    //     overflow: hidden;
+    //     transition: height 0.3s ease-in-out; /* Smooth height transition */
+    
+    //     &.active {
+    //         height: 100vh; /* Expand to full screen */
+    //         overflow-y: auto; /* Allow scrolling when expanded */
+    //     }
+    // }
+    
+    // .main-content__panel-trigger {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 50px; /* Area for the trigger */
+    //     background-color: $secondary-color;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     cursor: pointer;
+    //     border-radius: 20px 20px 0 0;
+    // }
+    
+    // .menu__panel-icon {
+    //     width: 30px;
+    //     height: 30px;
+    //     fill: $text-primary-color;
+    // }
+    
+    // main.scrolled {
+    //     transform: translateY(0); /* Fully visible when scrolled up */
+    // }
     .menu{
         padding:0;
         flex-direction: column;
 
         &__icon{
             display: none;
+
+            &-sticky{
+                display: none;
+            }
         }
         &__bar{
             display: none;
+            
+            &-sticky{
+                display: none;
+            }
         }
-        &__panel-icon{
-            border-top: 5px solid $tertiary-color;
-            border-radius: 2px;
-        }
+
     }
     .map-hidden{
         display: block;
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         padding-bottom: 20px;
     }
     .main-content{
-        padding: 0 20px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        padding: 10px 0 0 20px;
         display: flex;
         flex-direction: column;
+        background-color: $primary-color;
         
         &__panel-icon{
             order: 1;
             display: block;
-            padding: 0 20px;
+            padding: 20px 10px;
+            border-top: 5px solid $tertiary-color;
+            border-radius: 2px;
+        }
+        svg{
+            display: block;
         }
     }
     .directions{
@@ -725,7 +780,7 @@ body {
         cursor: pointer;
         z-index: 1000;
     }
-    
+
 }
 
 

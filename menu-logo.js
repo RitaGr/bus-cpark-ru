@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const initialIcon = './svg/svg-sprite.svg#icon-logo'; // Default bus icon
     const arrowUpIcon = './svg/svg-sprite.svg#icon-arrow-up'; // Arrow up icon
 
+    const isMobile = () => window.innerWidth <= 768; // Define mobile breakpoint (adjust if needed)
+
     window.addEventListener('scroll', () => {
+        if (isMobile()) return; // Exit the function if it's on mobile
+
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > 0) {
@@ -23,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Make the icon clickable to scroll back to the top
     menuIconWrapper.addEventListener('click', () => {
+        if (isMobile()) return; // Prevent the scroll-to-top functionality on mobile
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });

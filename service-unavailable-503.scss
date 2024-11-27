@@ -1,6 +1,4 @@
-// Variables
-$unavailable-color: #FF9999;
-$unavailable-second-color: #AC5F5F;
+@use '../../scss/base/variables';
 
 // Body Styling
 body.service-unavailable {

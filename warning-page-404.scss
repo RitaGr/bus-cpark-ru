@@ -1,6 +1,4 @@
-// Variables
-$warning-color: #fff599;
-$warning-second-color: #BB9B5D;
+@use '../../scss/base/variables';
 
 // Body Styling
 body.warning-page-404 {
