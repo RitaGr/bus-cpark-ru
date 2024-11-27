@@ -18,6 +18,9 @@ body {
   position: relative;
   z-index: 1; /* Ensure the menu bar does not overlap with other content */
 }
+.menu__panel-icon {
+  display: none;
+}
 .menu__icon {
   position: relative; /* Default position */
   transition: all 0.3s ease; /* Smooth transition for sticky effect */
