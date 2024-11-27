@@ -44,7 +44,7 @@ body {
   justify-content: end;
   align-items: end;
 }
-.menu__bar .menu__bar-box {
+.menu__bar-box {
   border: 3px solid #FFFFFF;
   border-radius: 10px;
   height: 54px;
@@ -55,7 +55,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.menu__bar .menu__bar-text {
+.menu__bar-text {
   color: #FFFFFF;
   font-size: 20px;
   display: flex;
@@ -71,10 +71,12 @@ body {
   justify-content: flex-start;
   width: 50%;
   padding-left: 15px;
+  overflow: hidden;
 }
 .menu__bar .scroll-text {
   position: absolute;
   white-space: nowrap;
+  margin: 0;
   font-weight: 400;
   font-style: normal;
   color: #FFFFFF;
@@ -84,6 +86,32 @@ body {
   color: #FFFFFF;
   font-weight: regular;
   padding: 0 100px;
+}
+
+.list {
+  display: flex; /* Flex layout for scrolling */
+  justify-content: center;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  align-items: center; /* Vertically align items */
+}
+
+.listitem {
+  display: flex; /* Ensure horizontal alignment */
+  justify-content: center;
+  align-items: center;
+  padding: 0 150px; /* Add spacing between items */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center;
+}
+
+.list.cloned {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .main-content {

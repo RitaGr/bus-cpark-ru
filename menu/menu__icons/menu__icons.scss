@@ -62,7 +62,7 @@ body {
             align-items: end;
         }
 
-        .menu__bar-box {
+        &-box {
             border: 3px solid $text-primary-color;
             border-radius: 10px;
             height: 54px;
@@ -74,7 +74,7 @@ body {
             justify-content: center;
         }
 
-        .menu__bar-text {
+        &-text {
             color: $text-primary-color;
             font-size: 20px;
             display: flex;
@@ -91,11 +91,14 @@ body {
             justify-content: flex-start;
             width: 50%;
             padding-left: 15px;
+            overflow: hidden;
         }
 
         .scroll-text {
             position: absolute;
+            // animation: scrollText 10s linear infinite;
             white-space: nowrap;
+            margin: 0;
             font-weight: 400;
             font-style: normal;
             color: $text-primary-color;
@@ -110,7 +113,58 @@ body {
         padding: 0 100px;
     }
 }
+// .scroll-text {
+//     position: absolute;
+//     width: 100%;
+//     // white-space: nowrap; /* Prevent text wrapping */
+//     // animation: scrollRight 10s linear infinite; /* Animation for scrolling */
+// }
 
+// //* Keyframes for scrolling to the right */
+// @keyframes scrollRight {
+//     0% {
+//         transform: translateX(-100%); /* Start completely to the left */
+//     }
+//     10% {
+//         transform: translateX(0); /* Fully visible */
+//     }
+//     40% {
+//         transform: translateX(0); /* Pause in the center */
+//     }
+//     50% {
+//         transform: translateX(100%); /* Move out to the right */
+//     }
+//     100% {
+//         transform: translateX(100%); /* Reset to loop */
+//     }
+// }
+
+
+.list {
+    display: flex; /* Flex layout for scrolling */
+    justify-content: center;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: center; /* Vertically align items */
+}
+
+.listitem {
+    display: flex; /* Ensure horizontal alignment */
+    justify-content: center;
+    align-items: center;
+    padding: 0 150px; /* Add spacing between items */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center;
+}
+
+.list.cloned {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
 
 .main-content{
