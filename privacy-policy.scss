@@ -1,4 +1,4 @@
-@use '../../scss/base/variables';
+@use './scss/base/variables' as *;
 
 body {
     background-color: $primary-color;

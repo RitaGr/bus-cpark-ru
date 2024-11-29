@@ -4,7 +4,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: "Rubik", sans-serif;
-  color: #373F42;
+  color: #56746F;
 }
 
 .privacy-policy {
@@ -37,20 +37,20 @@ body {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #373F42;
+  color: #56746F;
 }
 .privacy-policy__subtitle {
   font-size: 20px;
   font-weight: 500;
   margin-top: 24px;
   margin-bottom: 12px;
-  color: #373F42;
+  color: #56746F;
 }
 .privacy-policy__text {
   font-size: 16px;
   font-weight: 300;
   margin: 6px 0;
-  color: #373F42;
+  color: #56746F;
   line-height: 1.6;
 }
 .privacy-policy__footer {
