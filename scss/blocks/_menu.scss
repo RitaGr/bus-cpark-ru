@@ -120,3 +120,29 @@
     left: 0;
 }
 
+@media (max-width: 768px) {
+    .menu {
+        padding: 0;
+        flex-direction: column;
+
+        &__icon{
+            display: none !important;
+
+            &-sticky{
+                display: none !important;
+            }
+        }
+        &__bar{
+            display: none !important;
+        
+            &-sticky{
+                display: none !important;
+            }
+        }
+        &__panel-icon{
+            border-top: 5px solid $tertiary-color;
+            border-radius: 2px;
+        }
+
+    }
+}

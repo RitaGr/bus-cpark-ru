@@ -1,0 +1,86 @@
+body {
+  background-color: #5CC1AF;
+  background-image: url("../../svg/background-site.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Rubik", sans-serif;
+  color: #56746F;
+}
+
+.privacy-policy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+  min-height: 100vh;
+}
+.privacy-policy__header, .privacy-policy__footer {
+  padding: 36px 0;
+}
+.privacy-policy__header a, .privacy-policy__footer a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+.privacy-policy__header a:visited, .privacy-policy__footer a:visited {
+  color: #FFFFFF;
+}
+.privacy-policy__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 24px 36px;
+  width: 100%;
+}
+.privacy-policy__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #56746F;
+}
+.privacy-policy__subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: #56746F;
+}
+.privacy-policy__text {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 6px 0;
+  color: #56746F;
+  line-height: 1.6;
+}
+.privacy-policy__footer {
+  color: #FFFFFF;
+}
+.privacy-policy__footer-desktop {
+  display: flex;
+  justify-content: center;
+}
+.privacy-policy__footer-desktop .privacy-policy__back-link {
+  color: #FFFFFF;
+}
+.privacy-policy__footer-mobile {
+  display: none;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 300;
+}
+.privacy-policy__footer-mobile .footer-link a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy__footer-desktop {
+    display: none;
+  }
+  .privacy-policy__footer-mobile {
+    display: block;
+    padding: 20px 0;
+  }
+}/*# sourceMappingURL=privacy-policy.css.map */

@@ -14,12 +14,14 @@
         font-size: 12px;
         font-weight: 400;
         color : $disclaimer-text-color;
+        padding-top: 10px;
     }
     &__disclaimer-link{
         color : $disclaimer-text-color;
     }
     &__form{
         width: 100%;
+        user-select: none;
     }
     &__group{
         display: flex;
@@ -31,9 +33,9 @@
         position: relative;
 
         &-hidden {
-            display: none; /* Hide the element */
+            display: none;
         }
-        
+
     }
     &__label{
         position: absolute;
@@ -70,30 +72,23 @@
         -webkit-appearance: none;  // For WebKit browsers (Chrome, Safari, etc.)
         -moz-appearance: none;     // For Firefox
         appearance: none;          // Standard property
-      
+        width: 100%;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        color: $text-secondary-color;
+        font-size: 14px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 600;
       
         // For better cross-browser consistency
         &::-ms-expand {
           display: none;           // Hides the dropdown arrow in Internet Explorer
         }
-
-        option{
-            background-color: lighten($tertiary-color, 20%);
-            color: $text-secondary-color;
-            font-size: 14px;
-            font-family: 'Rubik', sans-serif;
-            font-weight: 600;
-        }
-        option[disabled] {
-            background-color: $tertiary-color;
-            color: $text-secondary-color;
-            font-size: 14px;
-            font-family: 'Rubik', sans-serif;
-            font-weight: 600;
-        }
      }
+    select option{
+        background-color: $disclaimer-text-color;
+    }
     &__input::placeholder{
-        // color: transparent;
         font-weight: 600;
         color: $text-secondary-color;
         font-size: 14px;
@@ -134,7 +129,6 @@
         padding: 20px 25px 0 20px;
     }
     &__textarea::placeholder{
-        // color: transparent;
         font-weight: 600;
         color: $text-secondary-color;
         font-size: 14px;
@@ -147,7 +141,6 @@
     &__input:focus,
     &__textarea:focus {
         color: $text-secondary-color;
-        
     }
     
     &__button{
@@ -160,5 +153,21 @@
         font-family: 'Rubik';
         font-weight: 500;
         border: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .complaint{
+        padding: 20px;
+        width: 100%;
+        order: 3;
+        padding-bottom: 75px;
+
+        &__title,&__text{
+            padding-bottom: 20px;
+        }
+        &__disclaimer{
+            padding-top: 10px;
+        }
     }
 }

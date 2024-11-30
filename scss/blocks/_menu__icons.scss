@@ -16,6 +16,9 @@ body {
     justify-content: center;
     align-items: center;
     padding-left: 50px;
+}
+.panel-container{
+    display: none;
 
     &__panel-icon{
         display: none;
@@ -23,26 +26,11 @@ body {
 
 }
 
-.map-hidden{
+.map-mobile{
     display: none;
 }
 
 
-
-/* Hide sliding panel by default */
-.sliding-panel {
-    display: none;
-}
-
-// /* Hide the sliding panel and bus icon on larger screens */
-// @media only screen and (min-width: 768px) {
-//     .sliding-panel,
-//     .bus-icon {
-//         display: none;
-//     }
-// }
-
-/* Show the sliding panel and bus icon on mobile screens */
 @media only screen and (max-width: 768px) {
 
     *{
@@ -56,200 +44,74 @@ body {
     }
     main{
         border-radius: 20px 20px 0 0;
-        margin-top: -90px;
         z-index: 1;
         position: relative;
         width: 100%;
     }
-    main.active {
-        height: 100vh; /* Expand to full screen */
-        overflow-y: auto; /* Allow scrolling when expanded */
-        z-index: 1;
-        overflow: hidden;
-        transition: height 0.3s ease-in-out;
-        height: 100
-    }
-    // main {
-    //     position: fixed;
-    //     bottom: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 50px; /* Collapsed height */
-    //     background-color: $primary-color;
-    //     border-radius: 20px 20px 0 0;
-    //     z-index: 1;
-    //     overflow: hidden;
-    //     transition: height 0.3s ease-in-out; /* Smooth height transition */
-    
-    //     &.active {
-    //         height: 100vh; /* Expand to full screen */
-    //         overflow-y: auto; /* Allow scrolling when expanded */
-    //     }
-    // }
-    
-    // .main-content__panel-trigger {
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     width: 100%;
-    //     height: 50px; /* Area for the trigger */
-    //     background-color: $secondary-color;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     cursor: pointer;
-    //     border-radius: 20px 20px 0 0;
-    // }
-    
-    // .menu__panel-icon {
-    //     width: 30px;
-    //     height: 30px;
-    //     fill: $text-primary-color;
-    // }
-    
-    // main.scrolled {
-    //     transform: translateY(0); /* Fully visible when scrolled up */
-    // }
-    .menu {
-        padding:0;
-        flex-direction: column;
-
-        &__icon{
-            display: none;
-
-            &-sticky{
-                display: none;
-            }
-        }
-        &__bar{
-            display: none;
-            
-            &-sticky{
-                display: none;
-            }
-        }
-
-    }
-    .map-hidden{
-        display: block;
+    .main-content.active{
+        transform: translateY(0);
+        position: relative;
+        overflow: hidden; 
         height: 100vh;
-        width: 100vw;
-        padding-bottom: 20px;
-    }
-    .main-content{
-        padding: 10px 0 0 20px;
         display: flex;
+        margin: 0;
+        overflow-y: auto;
+        z-index: 10;
+        padding: 200% 0 0 0;
         flex-direction: column;
         background-color: $primary-color;
-        
-        &__panel-icon{
-            order: 1;
-            display: block;
-            padding: 20px 10px;
-            border-top: 5px solid $tertiary-color;
-            border-radius: 2px;
-        }
-        svg{
-            display: block;
-        }
+        transition: transform 500ms ease;
     }
-    .directions{
-        width: 100%;
-        padding: 0;
-        order: 3;
-
-        &__title-box{
-            padding-bottom: 20px;
-        }
-        &__text{
-            width: 100%;
-        }
-        &__map-image{
-            display: none;
-        }
-
-
-    }
-    .schedule{
-        order: 2;
-        width: 100%;
-        border: none;
-
-        &__title{
-            display: none;
-        }
-        &__subtitle{
-            display: none;
-        }
-        &__station-icon{
-            display: none;
-        }
-        &__full-title{
-            padding-top: 20px;
-        }
-    }
-    .complaint{
-        width: 100%;
-        order: 4;
-
-        &__title,&__text{
-            padding-bottom: 20px;
-        }
-    }
-    .alternative-route{
-        order: 5;
-        width: 100%;
-
-        &__title{
-            padding-bottom: 20px;
-        }
-        &__text{
-            padding-bottom: 20px;
-        }
-    }
-    .footer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
-        text-align: center;
-    }
-    .sliding-panel {
+    .main-content.hidden {
+        transform: translateY(-100%);
+      }
+    
+    .map-mobile{
+        display: block;
+        // height: 100vh;
+        width: 100vw;
         position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 70%;
+    }
+    .map-mobile.hidden{
+        display: none;
+    }
+    .main-content{
+        // padding: 10px 0 0 20px;
+        display: none;
+
+    }
+    .panel-container{
+        display: block;
+        padding: 20px 10px;
+        background-color: $primary-color;
         border-radius: 15px 15px 0 0;
-        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-        transform: translateY(100%);
-        transition: transform 0.3s ease-in-out;
-        z-index: 999;
-        overflow-y: auto;
-    }
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        z-index: 100;
 
-    .sliding-panel.active {
-        transform: translateY(0);
+        &__panel-icon{
+            display: block;
+            border-top: 5px solid $text-primary-color;
+        }
+        &.at-top {
+            position: static !important;
+            border-radius: 0;
+            top: 10px; /* Move the panel container to the top */
+            bottom: unset;
+            z-index: 1 !important;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
     }
-
-    .bus-icon {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1000;
+    .panel-container.hidden{
+        display: none;
     }
-
 }
+
 
 
 

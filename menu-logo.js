@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuIcon = document.querySelector('.menu__icon use');
     const menuIconWrapper = document.querySelector('.menu__icon');
     const menuBarWrapper = document.querySelector('.menu');
-    const initialIcon = './svg/svg-sprite.svg#icon-logo'; // Default bus icon
-    const arrowUpIcon = './svg/svg-sprite.svg#icon-arrow-up'; // Arrow up icon
+    const initialIcon = './svg/svg-sprite.svg#icon-logo';
+    const arrowUpIcon = './svg/svg-sprite.svg#icon-arrow-up';
 
-    const isMobile = () => window.innerWidth <= 768; // Define mobile breakpoint (adjust if needed)
+    const isMobile = () => window.innerWidth <= 768; // mobile breakpoint
 
     window.addEventListener('scroll', () => {
         if (isMobile()) return; // Exit the function if it's on mobile

@@ -8,7 +8,6 @@
     background-color: $primary-color;
     border : 3px solid $secondary-color ;
     border-radius: 15px;
-    // width: 30%;
     margin-bottom: 75px;
 
     &__title{
@@ -114,5 +113,36 @@
     }
     &__item:nth-last-child(1){
         border: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .schedule{
+        order: 1;
+        width: 100%;
+        border: none;
+        padding: 20px;
+
+        &__title{
+            display: none;
+        }
+        
+        &__subtitle{
+            display: none;
+        }
+        &__station{
+
+            &-icon{
+                display: none;
+            }  
+        }
+        &__full-title{
+            padding-top: 20px;
+        }
+        &__column{
+            width: 160px;
+        }
+        
     }
 }

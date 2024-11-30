@@ -1,0 +1,55 @@
+body.service-unavailable {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Rubik, sans-serif;
+  background-color: #FF9999;
+  color: #AC5F5F;
+}
+
+.service-unavailable__container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.service-unavailable__title {
+  font-size: 96px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.service-unavailable__message {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.service-unavailable__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed #AC5F5F;
+}
+.service-unavailable__line--left {
+  left: 10%;
+}
+.service-unavailable__line--right {
+  right: 10%;
+}
+
+@media (max-width: 600px) {
+  .service-unavailable__message {
+    padding: 24px;
+  }
+  .service-unavailable__line--left {
+    left: 5%;
+  }
+  .service-unavailable__line--right {
+    right: 5%;
+  }
+}/*# sourceMappingURL=service-unavailable-503.css.map */
