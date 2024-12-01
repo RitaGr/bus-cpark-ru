@@ -1,0 +1,26 @@
+@use '../base/variables';
+
+.alternative-route{
+    width: 30%;
+    padding-bottom: 124px;
+
+    &__text{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .alternative-route{
+        order: 4;
+        width: 100%;
+        padding: 20px 20px 75px 20px;
+
+        &__title{
+            padding-bottom: 20px;
+        }
+        &__text{
+            padding-bottom: 20px;
+        }
+    }
+}

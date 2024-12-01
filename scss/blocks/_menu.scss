@@ -1,0 +1,153 @@
+@use '../base/variables' as *;
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+    padding-bottom: 75px;
+    position: relative;
+    z-index: 1; /* Ensure the menu bar does not overlap with other content */
+
+    &__panel-icon{
+        display: none;
+    }
+    &__icon {
+        position: relative; /* Default position */
+        transition: all 0.3s ease; /* Smooth transition for sticky effect */
+        z-index: 1000; /* Ensure icon stays above other elements */
+        cursor: pointer; /* Make the icon clickable */
+
+        &-sticky {
+            position: fixed;
+            left: 50px;
+            top: 50px;
+            z-index: 1000; /* Ensure it stays on top */
+            transform: translate(0, 0);
+        }
+    }
+
+    &__bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 70%;
+        padding-right: 10%;
+        
+        &-sticky{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            align-items: end;
+        }
+
+        &-box {
+            border: 3px solid $text-primary-color;
+            border-radius: 10px;
+            height: 54px;
+            width: 454px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        &-text {
+            color: $text-primary-color;
+            font-size: 20px;
+            display: flex;
+            align-items: center;            
+            justify-content: center;
+        }
+
+        .scroll-text-container {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items:center;
+            justify-content: flex-start;
+            width: 50%;
+            padding-left: 15px;
+            overflow: hidden;
+        }
+
+        .scroll-text {
+            display: flex; /* Ensure horizontal alignment */
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            position: absolute;
+            // animation: scrollText 10s linear infinite;
+            white-space: nowrap;
+            margin: 0;
+            font-weight: 400;
+            font-style: normal;
+            color: $text-primary-color;
+            font-family: "Rubik Mono One", monospace;
+        }
+
+    }
+
+    &__link {
+        color: $text-primary-color;
+        font-weight: regular;
+        padding: 0 100px;
+    }
+}
+
+.list {
+    display: flex; /* Flex layout for scrolling */
+    justify-content: center;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: -40px;
+    height: 100%;
+    align-items: center; /* Vertically align items */
+}
+
+.listitem {
+    display: flex; /* Ensure horizontal alignment */
+    justify-content: center;
+    align-items: center;
+    padding: 0 150px; /* Add spacing between items */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center;
+}
+
+.list.cloned {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        padding: 0;
+        flex-direction: column;
+
+        &__icon{
+            display: none !important;
+
+            &-sticky{
+                display: none !important;
+            }
+        }
+        &__bar{
+            display: none !important;
+        
+            &-sticky{
+                display: none !important;
+            }
+        }
+        &__panel-icon{
+            border-top: 5px solid $tertiary-color;
+            border-radius: 2px;
+        }
+
+    }
+}

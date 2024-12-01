@@ -1,4 +1,4 @@
-@use '../../scss/base/variables';
+@use './scss/base/variables' as *;
 
 body {
     background-color: $primary-color;
@@ -64,7 +64,6 @@ body {
     &__footer {
         color: $link-color;
         
-        // Desktop Footer Style
         &-desktop {
             display: flex;
             justify-content: center;
@@ -74,7 +73,6 @@ body {
             }
         }
 
-        // Mobile Footer Style
         &-mobile {
             display: none;
             font-size: 16px;
@@ -90,7 +88,6 @@ body {
     }
 }
 
-// Responsive Styles
 @media (max-width: 768px) {
     .privacy-policy__footer-desktop {
         display: none;

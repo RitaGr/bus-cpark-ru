@@ -1,0 +1,149 @@
+@use '../base/variables' as *;
+
+.schedule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    border : 3px solid $secondary-color ;
+    border-radius: 15px;
+    margin-bottom: 75px;
+
+    &__title{
+        font-size: 24px;
+        text-decoration: underline;
+    }
+
+    &__subtitle{
+        font-size: 16px;
+    }
+
+    &__next-trip{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__station{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__station-name{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    &__time-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__time{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        background-color: $tertiary-color;
+        color: $text-secondary-color;
+        font-size: 24px;
+        font-weight: 400;
+        width: 160px;
+        height: 60px;
+    }
+    &__time-note{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $error-second-color;
+        border-radius: 10px;
+        background-color: $error-color;
+        color: $error-second-color;
+        font-size: 14px;
+        font-weight: 400;
+        width: 136px;
+        height: 37px;
+        margin-top: -16px;
+    }
+    &__full-title{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    &__full{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+        gap: 30px;
+    }
+    &__column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        background-color: $tertiary-color;
+        color: $text-secondary-color;
+        font-size: 24px;
+        font-weight: 400;
+        width: 180px;
+    }
+    &__list{
+        
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $stroke-color;
+        width: 90px;
+        height: 30px;
+        padding: 6px;
+    }
+    &__item:nth-last-child(1){
+        border: none;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .schedule{
+        order: 1;
+        width: 100%;
+        border: none;
+        padding: 20px;
+        height: 100vh;
+
+        &__title{
+            display: none;
+        }
+        
+        &__subtitle{
+            display: none;
+        }
+        &__station{
+
+            &-icon{
+                display: none;
+            }  
+        }
+        &__full-title{
+            padding-top: 20px;
+        }
+        &__column{
+            width: 160px;
+        }
+        
+    }
+}

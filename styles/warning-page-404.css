@@ -1,5 +1,3 @@
-@use './scss/base/variables' as *;
-
 body.warning-page-404 {
   margin: 0;
   display: flex;
@@ -8,8 +6,8 @@ body.warning-page-404 {
   align-items: center;
   height: 100vh;
   font-family: Rubik, sans-serif;
-  background-color: $warning-color;
-  color: $warning-second-color;
+  background-color: #fff599;
+  color: #BB9B5D;
 }
 
 .warning-page-404__container {
@@ -33,7 +31,7 @@ body.warning-page-404 {
 .warning-page-404__link {
   font-size: 16px;
   text-decoration: underline;
-  color: $warning-second-color;
+  color: #BB9B5D;
   position: absolute;
   top: 480px;
   left: 50%;
@@ -45,15 +43,13 @@ body.warning-page-404 {
   top: 0;
   bottom: 0;
   width: 2px;
-  border-left: 2px dashed $warning-second-color;
-
-  &--left {
-    left: 10%;
-  }
-  
-  &--right {
-    right: 10%;
-  }
+  border-left: 2px dashed #BB9B5D;
+}
+.warning-page-404__line--left {
+  left: 10%;
+}
+.warning-page-404__line--right {
+  right: 10%;
 }
 
 @media (max-width: 600px) {
@@ -62,12 +58,10 @@ body.warning-page-404 {
     top: 360px;
     bottom: 0;
   }
-
   .warning-page-404__line--left {
     left: 5%;
   }
-
   .warning-page-404__line--right {
     right: 5%;
   }
-}
+}/*# sourceMappingURL=warning-page-404.css.map */
