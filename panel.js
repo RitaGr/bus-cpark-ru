@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mainPanel.classList.toggle("visible");
         footerContent.classList.toggle("active");
         map.classList.toggle("hidden");
-        // document.body.classList.toggle("active");
         notificationContainer.classList.toggle("hidden");
         mobileFooter.classList.toggle("visible");
       }
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mainPanel.classList.toggle("visible");
         footerContent.classList.toggle("active");
         map.classList.toggle("hidden");
-        // document.body.classList.toggle("active");
         notificationContainer.classList.toggle("hidden");
         mobileFooter.classList.toggle("visible");
       }
