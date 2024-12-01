@@ -15,6 +15,9 @@ body {
   align-items: center;
   padding-left: 50px;
 }
+.main-content__footer-mobile {
+  display: none !important;
+}
 
 .panel-container {
   display: none;
@@ -33,29 +36,49 @@ body {
     margin: 0;
     box-sizing: border-box;
   }
+  html {
+    height: 100vh;
+  }
   body {
     background-image: none;
-    width: 100vw;
+    height: 100vh;
   }
-  main {
-    border-radius: 20px 20px 0 0;
-    z-index: 1;
-    position: relative;
-    width: 100%;
+  main.active {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   .main-content.active {
     transform: translateY(0);
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
+    height: 250vh;
     display: flex;
+    visibility: visible;
     margin: 0;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    padding: 0;
     overflow-y: auto;
-    z-index: 10;
-    padding: 200% 0 0 0;
+    z-index: 20;
     flex-direction: column;
     background-color: #5CC1AF;
     transition: transform 500ms ease;
+  }
+  .main-content__panel-container {
+    display: none;
+  }
+  .main-content__panel-container.visible {
+    display: flex;
+    padding-bottom: 75px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative !important;
+    top: 0;
+    left: 0;
   }
   .main-content.hidden {
     transform: translateY(-100%);
@@ -90,16 +113,17 @@ body {
     border-top: 5px solid #FFFFFF;
   }
   .panel-container.at-top {
-    position: static !important;
-    border-radius: 0;
-    top: 10px; /* Move the panel container to the top */
-    bottom: unset;
-    z-index: 1 !important;
-    transform: translateY(0);
-    transition: transform 0.3s ease;
+    display: none;
   }
   .panel-container.hidden {
     display: none;
+  }
+  .main-content__footer-mobile.visible {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    order: 5;
   }
 }
 .menu {
@@ -261,6 +285,7 @@ body {
     width: 100%;
     padding: 20px;
     order: 2;
+    position: static;
   }
   .directions__title-box {
     padding-bottom: 20px;
@@ -390,6 +415,7 @@ body {
     width: 100%;
     border: none;
     padding: 20px;
+    height: 100vh;
   }
   .schedule__title {
     display: none;
@@ -560,6 +586,7 @@ body {
     width: 100%;
     order: 3;
     padding-bottom: 75px;
+    position: static;
   }
   .complaint__title, .complaint__text {
     padding-bottom: 20px;
